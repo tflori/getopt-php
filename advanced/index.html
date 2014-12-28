@@ -7,18 +7,18 @@ title: Advanced Features
 <p>These optional features add more power to Getopt in exchange for some additional configuration work.</p>
 
 <p>One thing all of these have in common is that they make use of chainable methods. That makes it easy to add any
-	number of them to an <tt>Option</tt> object, for example:</pp>
+	number of them to an <tt>Option</tt> object, for example (PHP 5.4 and above only):</p>
 
 {% highlight php startinline %}
 $getopt = new Getopt(array(
-    new Option('o', 'option', Getopt::REQUIRED_ARGUMENT)
+    (new Option('o', 'option', Getopt::REQUIRED_ARGUMENT))   // note the extra set of parentheses
         ->setDescription('Description of option')
         ->setDefaultValue('default')
 ));
 {% endhighlight %}
 
-<p>Note that chaining methods directly off the constructor (<tt>new Option(...)->set...</tt>) only works in PHP 5.4
-and above. As of Getopt 2.2, users restricted to PHP 5.3 can use the static <tt>create()</tt> method instead:</p>
+<p>As of Getopt 2.2, users restricted to PHP 5.3 (where chaining methods directly off the constructor is not supported
+	yet) can use the static <tt>create()</tt> method instead:</p>
 
 {% highlight php startinline %}
 $getopt = new Getopt(array(

@@ -18,6 +18,20 @@ $getopt = new Getopt(array(
 ));
 {% endhighlight %}
 
+<h2>Argument Names</h2>
+
+<p>As of v2.3.0, it is also possible to change the name displayed for the argument in the usage information. This
+	requires manual creation of an <tt>Argument</tt> object. For instance, the following snippet will make the <tt>-n</tt>
+	option show up as <tt>-n &lt;count&gt;</tt> (instead of <tt>-n &lt;arg&gt;</tt>):</p>
+
+{% highlight php startinline %}
+$getopt = new Getopt(array(
+    new Option('n', null, Getopt::REQUIRED_ARGUMENT)
+        ->setArgument(new Argument(null, null, "count"))
+        // see "Argument Validation" for the meaning of the first two parameters
+));
+{% endhighlight %}
+
 <h2>The Legacy Way</h2>
 
 <p>If you are using the array notation from Getopt v1, you can set the description as the fourth

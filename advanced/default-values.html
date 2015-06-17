@@ -9,7 +9,7 @@ title: Default Option Values
 
 {% highlight php startinline %}
 $getopt = new Getopt(array(
-    new Option('n', null, Getopt::REQUIRED_ARGUMENT)
+    (new Option('n', null, Getopt::REQUIRED_ARGUMENT))
         ->setDefaultValue(10)
 ));
 {% endhighlight %}
@@ -22,7 +22,7 @@ $getopt = new Getopt(array(
 
 {% highlight php startinline %}
 $getopt = new Getopt(array(
-    new Option('n', null, Getopt::REQUIRED_ARGUMENT)
+    (new Option('n', null, Getopt::REQUIRED_ARGUMENT))
         ->setArgument(new Argument(10, 'is_numeric'))
 ));
 {% endhighlight %}

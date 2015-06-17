@@ -11,9 +11,9 @@ title: Option Descriptions
 
 {% highlight php startinline %}
 $getopt = new Getopt(array(
-    new Option('v', 'version')
+    (new Option('v', 'version'))
         ->setDescription('Display version information'),
-    new Option('h', 'help')
+    (new Option('h', 'help'))
         ->setDescription('Show help text')
 ));
 {% endhighlight %}
@@ -26,7 +26,7 @@ $getopt = new Getopt(array(
 
 {% highlight php startinline %}
 $getopt = new Getopt(array(
-    new Option('n', null, Getopt::REQUIRED_ARGUMENT)
+    (new Option('n', null, Getopt::REQUIRED_ARGUMENT))
         ->setArgument(new Argument(null, null, "count"))
         // see "Argument Validation" for the meaning of the first two parameters
 ));

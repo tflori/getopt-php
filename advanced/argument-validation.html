@@ -9,7 +9,7 @@ title: Argument Validation
 
 {% highlight php startinline %}
 $getopt = new Getopt(array(
-    new Option('a', null, Getopt::REQUIRED_ARGUMENT)
+    (new Option('a', null, Getopt::REQUIRED_ARGUMENT))
         ->setValidation(function($value) {
             return ($value > 9000);
         })
@@ -27,7 +27,7 @@ $getopt = new Getopt(array(
 
 {% highlight php startinline %}
 $getopt = new Getopt(array(
-    new Option('n', null, Getopt::REQUIRED_ARGUMENT)
+    (new Option('n', null, Getopt::REQUIRED_ARGUMENT))
         ->setArgument(new Argument(10, 'is_numeric'))
 ));
 {% endhighlight %}
